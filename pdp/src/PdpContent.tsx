@@ -1,21 +1,26 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Product, getProductById, currency } from "home/Products";
 
 export default function PdpContent() {
-  const productId = "1";
+  const { productId } = useParams<{ productId: string }>();
   const [product, setProduct] = useState<Product>();
 
   const loadProductById = useCallback(
-    async (id: string) => {
-      const product = await getProductById(id);
-      setProduct(product);
+    async (id?: string) => {
+      if (id) {
+        const product = await getProductById(id);
+        setProduct(product);
+      } else {
+        setProduct(undefined);
+      }
     },
     [setProduct]
   );
 
   useEffect(() => {
     loadProductById(productId);
-  }, []);
+  }, [productId]);
 
   if (!product) {
     return null;
