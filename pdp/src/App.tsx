@@ -4,6 +4,7 @@ import Footer from "home/Footer";
 import Header from "home/Header";
 import "./index.scss";
 import SafeComponent from "./SafeComponent";
+import PdpContent from "./PdpContent";
 
 const App = () => {
   return (
@@ -11,7 +12,9 @@ const App = () => {
       <SafeComponent>
         <Header app={{ name: "Pdp" }} />
       </SafeComponent>
-      <div className="my-10">Pdp page content</div>
+      <div className="my-10">
+        <PdpContent />
+      </div>
       <Footer />
     </div>
   );
