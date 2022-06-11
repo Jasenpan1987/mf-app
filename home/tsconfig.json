@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es2019",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "jsx": "react-jsx",
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "strict": true,
+    "removeComments": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "inlineSources": true,
+    "resolveJsonModule": true,
+    "sourceRoot": "/"
+  },
+  "exclude": ["node_modules", "*.js", "dist"]
+}
