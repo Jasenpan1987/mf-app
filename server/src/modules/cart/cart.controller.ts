@@ -31,8 +31,8 @@ const initCart = (indexes: number[]): Cart => {
 @Controller('cart')
 export class CartController {
   private carts = {
-    1: initCart([1, 3, 4]),
-    2: initCart([2, 5]),
+    1: initCart([1, 3, 5]),
+    2: initCart([2, 3]),
   };
   constructor() {}
 
@@ -40,6 +40,7 @@ export class CartController {
   @UseGuards(JwtAuthGuard)
   async index(@Request() req: { user: User }): Promise<Cart> {
     const { userId } = req.user;
+    console.log(this.carts[userId]);
     return this.carts[userId] ?? { cartItems: [] };
   }
 

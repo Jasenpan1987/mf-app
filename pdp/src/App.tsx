@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import Footer from "home/Footer";
 import Header from "home/Header";
 import "./index.scss";
+import "remixicon/fonts/remixicon.css";
 import SafeComponent from "./SafeComponent";
 import PdpContent from "./PdpContent";
 
