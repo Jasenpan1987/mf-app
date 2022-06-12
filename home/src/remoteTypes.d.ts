@@ -8,6 +8,11 @@ declare module "home/Footer" {
   export default Footer;
 }
 
+declare module "home/HomeContent" {
+  const HomeContent: any;
+  export default HomeContent;
+}
+
 declare module "home/Products" {
   export interface Product {
     id: number;
@@ -36,6 +41,11 @@ declare module "cart/MiniCart" {
   export default MiniCart;
 }
 
+declare module "cart/CartContent" {
+  const CartContent: any;
+  export default CartContent;
+}
+
 declare module "cart/cart" {
   export const jwt: any;
   export const cart: any;
@@ -49,4 +59,9 @@ declare module "cart/cart" {
 declare module "cart/Login" {
   const Login: any;
   export default Login;
+}
+
+declare module "pdp/PdpContent" {
+  const PdpContent: any;
+  export default PdpContent;
 }

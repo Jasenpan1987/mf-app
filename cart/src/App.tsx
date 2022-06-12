@@ -10,7 +10,7 @@ import CartContent from "./CartContent";
 
 const App = () => (
   <div className="mx-auto max-w-6xl">
-    <Header app={{ name: "Cart" }} />
+    <Header />
     <CartContent />
     <Footer />
   </div>

@@ -26,7 +26,6 @@ export default function PdpContent() {
 
   useEffect(() => {
     if (addToCartRef.current && productId) {
-      console.log(addToCartRef.current);
       placeAddToCart(addToCartRef.current, parseInt(productId));
     }
   }, [product]);
