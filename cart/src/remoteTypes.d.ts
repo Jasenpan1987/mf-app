@@ -31,4 +31,22 @@ declare module "home/Products" {
   export const getProductById: (productId: string) => Promise<Product>;
 }
 
-// declare module ""
+declare module "cart/MiniCart" {
+  const MiniCart: any;
+  export default MiniCart;
+}
+
+declare module "cart/cart" {
+  export const jwt: any;
+  export const cart: any;
+  export const login: (username: string, password: string) => Promise<string>;
+  export const getCart: () => Promise<Cart>;
+  export const addProductToCart: (productId: number) => Promise<Cart>;
+  export const clearCart: () => Promise<Cart>;
+  export const useLoggedIn: () => boolean;
+}
+
+declare module "cart/Login" {
+  const Login: any;
+  export default Login;
+}
