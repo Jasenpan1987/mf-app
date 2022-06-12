@@ -21,3 +21,13 @@ declare module "home/Products" {
   export const getProducts: () => Promise<Product[]>;
   export const getProductById: (productId: string) => Promise<Product>;
 }
+
+declare module "addToCart/AddToCart" {
+  const AddToCart: any;
+  export default AddToCart;
+}
+
+declare module "addToCart/placeAddToCart" {
+  const placeAddToCart: (el: any, productId: number) => void;
+  export default placeAddToCart;
+}

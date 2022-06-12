@@ -1,10 +1,12 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Product, getProductById, currency } from "home/Products";
+import placeAddToCart from "addToCart/placeAddToCart";
 
 export default function PdpContent() {
   const { productId } = useParams<{ productId: string }>();
   const [product, setProduct] = useState<Product>();
+  const addToCartRef = useRef<HTMLDivElement>(null);
 
   const loadProductById = useCallback(
     async (id?: string) => {
@@ -22,6 +24,13 @@ export default function PdpContent() {
     loadProductById(productId);
   }, [productId]);
 
+  useEffect(() => {
+    if (addToCartRef.current && productId) {
+      console.log(addToCartRef.current);
+      placeAddToCart(addToCartRef.current, parseInt(productId));
+    }
+  }, [product]);
+
   if (!product) {
     return null;
   }
@@ -38,7 +47,7 @@ export default function PdpContent() {
             {currency.format(product.price)}
           </div>
         </div>
-        {/* <div ref={addToCart}></div> */}
+        <div ref={addToCartRef}></div>
         <div className="mt-10">{product.description}</div>
         <div className="mt-10">{product.longDescription}</div>
       </div>
